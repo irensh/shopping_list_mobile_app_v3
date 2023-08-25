@@ -1,0 +1,143 @@
+body {
+    background-color: #4b4b4b;
+    color: #f3e6bb;
+}
+
+h2,
+h4 {
+    color: #f3e6bb;
+}
+
+.message-container {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.message {
+    background-color: #FFECC7;
+    color: #727272;
+}
+
+.message h2 {
+    color: #977d48;
+}
+
+.message>div button {
+    background-color: #727272;
+    color: #FFECC7;
+}
+
+.message>div button:hover {
+    background-color: #535353;
+}
+
+.icon-close,
+.close-message-btn {
+    color: #549252;
+}
+
+img.back-arrow,
+img.close-settings,
+img.account-icon {
+    filter: invert(60%);
+}
+
+input {
+    color: #432000;
+    background-color: #e0e0e0;
+}
+
+button {
+    color: #f3e6bb;
+    background-color: #549252;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+button:hover {
+    background-color: #406e3e;
+}
+
+/* UL NAV BAR */
+nav {
+    background-color: #4b4b4b;
+}
+
+#add-new-list-div {
+    background-color: #727272;
+    box-shadow: 1px 3px 10px #000000;
+}
+
+.menu-bar {
+    color: #63a760;
+}
+
+#more ul {
+    background-color: #63a760;
+    box-shadow: -3px 3px 10px #000000;
+}
+
+#more ul li {
+    color: #FFECC7;
+}
+
+/* UL All Lists */
+#all-lists-ul>li {
+    background-color: #727272;
+    color: #FFECC7;
+}
+
+.list-options-ul {
+    background-color: #FFECC7;
+    box-shadow: -2px 3px 10px #000000;
+    color: #727272;
+}
+
+.list-options-ul hr {
+    color: #FFECC7;
+}
+
+/* UL Shopping List */
+.shopping-list-ul li {
+    background-color: #f3e7be;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #888168;
+}
+
+.shopping-list-ul li:hover {
+    background-color: #dbc598;
+}
+
+.add-list-button ,
+.add-button {
+    background-color: #535353;
+}
+
+.add-list-button:hover ,
+.add-button:hover {
+    background-color: #3d3d3d;
+}
+
+/* Settings container start */
+.settings-container {
+    background-color: #4b4b4b;
+}
+
+.settings-item {
+    background-color: #727272;
+}
+
+.ok-button {
+    color: rgb(84, 151, 84);
+}
+
+.on {
+    background-color: #3caf6c;
+}
+
+.off {
+    background-color: #afaeae;
+}
+
+.switch-circle {
+    /* border: 4px solid #808080; */
+    background-color: #ffffff;
+}

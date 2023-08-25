@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/light.css" media="" id="light">
+    <link rel="stylesheet" href="styles/dark.css" media="none" id="dark">
+
+    <title>Shopping list</title>
+</head>
+
+<body>
+    <!-- LOG IN AND SIGN UP -->
+    <div class="container login">
+        <img src="images/account_icon.png" class="account-icon" alt="account icon">
+
+        <!-- lOGIN FORM -->
+        <form id="login-form">
+            <input type="email" id="login-email" placeholder="Email address" required>
+            <input type="password" id="login-password" placeholder="Your password" required>
+            <button id="login-button">Log in</button>
+        </form>
+
+        <h4>OR</h4>
+
+        <!-- SIGN UP -->
+        <button id="view-signup-form">Sign up</button>
+    </div>
+
+    <!-- SIGN UP FORM -->
+    <div class="container signup" style="display: none;">
+        <img src="./images/arrow_100px.png" class="back-arrow" alt="back arrow">
+        <img src="images/account_icon.png" class="account-icon" alt="account icon">
+        <form id="signup-form">
+            <input type="email" id="signup-email" placeholder="Email address" required>
+            <input type="password" id="signup-password" placeholder="Password" minlength="6" maxlength="20" required>
+            <input type="password" id="signup-confirm-password" placeholder="Confirm password" minlength="6"
+                maxlength="20" required>
+            <button id="signup-button">Sign up</button>
+        </form>
+
+    </div>
+
+    <!-- UI after login -->
+    <div class="container lists" style="display: none;">
+
+        <!-- NAVBAR -->
+        <nav>
+            <ul id="nav-menu">
+                <li id="add-new-list-li">
+                    <img src="./images/add_list.png" alt="add new list icon" class="new-list-icon">
+                    <div id="add-new-list-div" style="display: none;">
+                        <h5>Add new list</h5>
+                        <form id="add-new-list-form">
+                            <input type="text" placeholder="Title" minlength="1" maxlength="25" required>
+                            <button class="add-list-button">Add</button>
+                        </form>
+                    </div>
+                </li>
+                <li id="more">
+                    <!-- <img src="./images/menu.png" alt="menu" style="width: 50px; height: auto;"> -->
+                    <i class="fa-solid fa-bars fa-lg menu-bar"></i>
+                    <ul style="display: none;">
+                        <li id="logout">Log out</li>
+                        <hr>
+                        <li id="account">Account</li>
+                        <hr>
+                        <li id="settings-btn">Settings</li>
+                        <hr>
+                        <li>About</li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- ALL LISTS -->
+        <ul id="all-lists-ul"></ul>
+    </div>
+
+    <!-- Settings Container -->
+    <div class="settings-container" style="display: none;">
+        <div class="settings">
+            <img src="./images/arrow_100px.png" class="close-settings" alt="back arrow">
+            <span class="settings-title">Settings</span>
+            <div class="settings-wrapper">
+                <!-- Light Theme -->
+                <div class="settings-item">
+                    <div>
+                        <h3>Light Theme</h3>
+                    </div>
+                    <div class="switch-wrapper">
+                        <div id="light-theme-switch" class="switch-bar theme on">
+                            <div class="switch-circle"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dark Theme -->
+                <div class="settings-item">
+                    <div>
+                        <h3>Dark Theme</h3>
+                    </div>
+                    <div class="switch-wrapper">
+                        <div id="dark-theme-switch" class="switch-bar theme off">
+                            <div class="switch-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop up "Confirmation Logout" -->
+    <div class="message-container logout" style="display: none;">
+        <div class="message">
+            <p></p>
+            <div>
+                <button class="close-message-btn">Cancel</button>
+                <button class="ok-button">Log out</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop up "Account" -->
+    <div class="message-container account" style="display: none;">
+        <div class="message">
+            <i class="fa-solid fa-xmark fa-2xl icon-close"></i>
+            <h2>Account information</h2>
+                <p></p>
+        </div>
+    </div>
+
+    <!-- Pop up error Message -->
+    <div class="message-container error" style="display: none;">
+        <div class="message">
+            <i class="fa-solid fa-xmark fa-2xl icon-close"></i>
+            <p></p>
+        </div>
+    </div>
+
+    <!-- Pop up "Rename list" -->
+    <div class="message-container rename" style="display: none;">
+        <div class="message">
+            <p></p>
+            <input type="text" placeholder="New title" minlength="1" maxlength="25" required>
+            <div>
+                <button class="close-message-btn">Cancel</button>
+                <button class="ok-button">Rename</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Pop up "Delete list" -->
+    <div class="message-container delete" style="display: none;">
+        <div class="message">
+            <p></p>
+            <div>
+                <button class="close-message-btn">Cancel</button>
+                <button class="ok-button">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./scripts/auth.js"></script>
+    <!-- <script type="module" src="./scripts/notifications.js"></script> -->
+</body>
+
+</html>

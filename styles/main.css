@@ -1,0 +1,330 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+    user-select: none;
+}
+
+h4,
+h2 {
+    text-align: center;
+}
+
+h5 {
+    margin: 10px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    /* max-width: 320px; */
+    margin: 0 auto;
+}
+
+.message-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    z-index: 100;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 10px;
+    padding: 15px;
+    border-radius: 8px;
+    width: 70%;
+}
+
+.message>p {
+    text-align: center;
+    font-size: 20px;
+}
+
+.message>div {
+    display: flex;
+}
+
+.message>div button {
+    flex-grow: 1;
+    width: 50%;
+}
+
+.icon-close,
+.close-message-btn {
+    cursor: pointer;
+}
+
+.icon-close {
+    margin-top: 10px;
+}
+
+#login-form,
+#signup-form,
+.shopping-list-div {
+    display: flex;
+    flex-direction: column;
+}
+
+img.account-icon {
+    width: 150px;
+    height: auto;
+    margin: 0 auto;
+}
+
+img.new-list-icon {
+    width: 50px;
+    height: auto;
+}
+
+img.basket {
+    width: 150px;
+    margin: 0 auto;
+}
+
+img.back-arrow {
+    margin: 10px;
+}
+
+img.back-arrow,
+img.close-settings {
+    width: 50px;
+    cursor: pointer;
+}
+
+input,
+button {
+    margin: 10px 10px;
+    border-style: none;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/* UL NAV BAR */
+nav {
+    padding-top: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+nav ul {
+    margin: 10px;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav ul li {
+    font-size: 32px;
+}
+
+#add-new-list-li {
+    position: relative;
+    float: left;
+}
+
+#add-new-list-li img {
+    cursor: pointer;
+}
+
+#add-new-list-div {
+    position: fixed;
+    top: 80px;
+    left: 25px;
+    border-radius: 8px;
+    padding: 10px;
+    width: 75%;
+    z-index: 50;
+}
+
+#add-new-list-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#more {
+    float: right;
+    position: relative;
+    top: 12px;
+}
+
+.menu-bar {
+    cursor: pointer;
+}
+
+#more ul {
+    margin: 0;
+    padding: 20px 20px;
+    border-radius: 8px;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    text-align: center;
+    z-index: 1;
+}
+
+#more ul li {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* UL All Lists */
+#all-lists-ul {
+    margin: 10px;
+    padding: 0;
+    list-style-type: none;
+}
+
+#all-lists-ul>li {
+    position: relative;
+    margin: 10px 0px;
+    border-radius: 8px;
+    padding: 10px 10px 10px 10px;
+}
+
+#all-lists-ul>li div {
+    display: flex;
+    gap: 10px;
+}
+
+#all-lists-ul>li div span {
+    flex-basis: 100%;
+    cursor: pointer;
+}
+
+.list-options {
+    display: block;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+}
+
+.list-options-ul {
+    margin: 0;
+    padding: 20px 20px;
+    border-radius: 8px;
+    position: absolute;
+    top: 8px;
+    right: 30px;
+    width: 100px;
+    text-align: center;
+    list-style-type: none;
+    z-index: 1;
+}
+
+.list-options-ul li {
+    cursor: pointer;
+}
+
+/* UL Shopping List */
+.shopping-list-ul {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.shopping-list-ul li {
+    border-radius: 8px;
+    padding: 15px;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 20px;
+}
+
+.shopping-list-ul li:hover {
+    cursor: pointer;
+}
+
+/* Settings container start */
+
+.settings-container {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 1%;
+    overflow: hidden;
+    z-index: 50;
+}
+
+.settings-title {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.settings-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    max-width: 600px;
+    margin: 0px auto;
+}
+
+.settings-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 20px 0px 20px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.settings-item>div h3 {
+    margin: 0;
+}
+
+.switch-wrapper {
+    display: flex;
+    min-width: 50px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.switch-bar {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.on {
+    justify-content: flex-end;
+}
+
+.off {
+    justify-content: flex-start;
+}
+
+.switch-circle {
+    margin: 0 3px;
+    border-radius: 8px;
+    width: 15px;
+    height: 15px;
+}
+
+/* Settings container end */
