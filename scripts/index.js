@@ -52,7 +52,7 @@ const themeSwitches = settingsContainer.querySelectorAll('.theme');
 
 let userID = null;
 let keyOfCurrentList = '';
-let theme = 'light';
+// let theme = 'light';
 
 // Listen for authentication status changes
 onAuthStateChanged(auth, (user) => {
@@ -279,7 +279,7 @@ settingsButton.addEventListener('click', function () {
 
     // addEventListeners to all buttons
     closeSettingsButton.addEventListener('click', closeSettingsContainer);
-    themeSwitches.forEach(swith => swith.addEventListener('click', switchTheme));
+    themeSwitches.forEach(swith => swith.addEventListener('click', switchThemeFromSettings));
 });
 
 //-------------------------Functions--------------------------
@@ -291,6 +291,14 @@ function setupUI(user) {
         displayOnlyNeedfulContainer(loginDiv);
         moreMenu.style.display = 'none';
         newListForm.style.display = 'none';
+    }
+
+    // Switch theme
+    if (localStorage.shoppingListTheme) {
+        switchStylesheet(localStorage.shoppingListTheme);
+    } else {
+        localStorage.setItem('shoppingListTheme', 'light');
+        switchStylesheet(localStorage.shoppingListTheme);
     }
 }
 
@@ -581,13 +589,10 @@ function closeSettingsContainer() {
 
     // removeEventListeners from all buttons in Settings Container
     this.removeEventListener('click', closeSettingsContainer);
-    themeSwitches.forEach(swith => swith.removeEventListener('click', switchTheme));
+    themeSwitches.forEach(swith => swith.removeEventListener('click', switchThemeFromSettings));
 }
 
-function switchTheme() {
-    const lightTheme = document.getElementById('light');
-    const darkTheme = document.getElementById('dark');
-
+function switchThemeFromSettings() {
     const lightThemeSwitch = document.querySelector('#light-theme-switch');
     const darkThemeSwitch = document.querySelector('#dark-theme-switch');
 
@@ -595,32 +600,37 @@ function switchTheme() {
         if (this.classList.contains('on')) {
             this.classList.replace('on', 'off');
             darkThemeSwitch.classList.replace('off', 'on');
-            switchStylesheet(darkTheme);
+            switchStylesheet('dark');
         } else {
             this.classList.replace('off', 'on');
             darkThemeSwitch.classList.replace('on', 'off');
-            switchStylesheet(lightTheme);
+            switchStylesheet('light');
         }
     } else if (this === darkThemeSwitch) {
         if (this.classList.contains('on')) {
             this.classList.replace('on', 'off');
             lightThemeSwitch.classList.replace('off', 'on');
-            switchStylesheet(lightTheme);
+            switchStylesheet('light');
         } else {
             this.classList.replace('off', 'on');
             lightThemeSwitch.classList.replace('on', 'off');
-            switchStylesheet(darkTheme);
+            switchStylesheet('dark');
         }
     }
+}
 
-    function switchStylesheet(node) {
-        if (node === lightTheme) {
-            lightTheme.media = '';
-            darkTheme.media = 'none';
-        } else {
-            lightTheme.media = 'none';
-            darkTheme.media = '';
-        }
+function switchStylesheet(theme) {
+    const lightTheme = document.getElementById('light');
+    const darkTheme = document.getElementById('dark');
+    
+    if (theme === 'light') {
+        lightTheme.media = '';
+        darkTheme.media = 'none';
+        localStorage.shoppingListTheme = 'light';
+    } else {
+        lightTheme.media = 'none';
+        darkTheme.media = '';
+        localStorage.shoppingListTheme = 'dark';
     }
 }
 
