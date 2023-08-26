@@ -122,7 +122,7 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
-// Hide #add-new-list-div, #more lu, .list-options-ul
+// Hide #add-new-list-div, #more ul, .list-options-ul
 document.addEventListener('click', () => {
     newListForm.style.display = 'none';
 
@@ -622,7 +622,7 @@ function switchThemeFromSettings() {
 function switchStylesheet(theme) {
     const lightTheme = document.getElementById('light');
     const darkTheme = document.getElementById('dark');
-    
+
     if (theme === 'light') {
         lightTheme.media = '';
         darkTheme.media = 'none';
