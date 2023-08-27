@@ -623,14 +623,19 @@ function switchStylesheet(theme) {
     const lightTheme = document.getElementById('light');
     const darkTheme = document.getElementById('dark');
 
+    const lightThemeSwitch = document.querySelector('#light-theme-switch');
+    const darkThemeSwitch = document.querySelector('#dark-theme-switch');
+
     if (theme === 'light') {
         lightTheme.media = '';
         darkTheme.media = 'none';
         localStorage.shoppingListTheme = 'light';
+        lightThemeSwitch.classList.replace('off', 'on');
     } else {
         lightTheme.media = 'none';
         darkTheme.media = '';
         localStorage.shoppingListTheme = 'dark';
+        darkThemeSwitch.classList.replace('off', 'on');
     }
 }
 
