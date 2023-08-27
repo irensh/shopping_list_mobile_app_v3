@@ -631,10 +631,12 @@ function switchStylesheet(theme) {
         darkTheme.media = 'none';
         localStorage.shoppingListTheme = 'light';
         lightThemeSwitch.classList.replace('off', 'on');
+        darkThemeSwitch.classList.replace('on', 'off');
     } else {
         lightTheme.media = 'none';
         darkTheme.media = '';
         localStorage.shoppingListTheme = 'dark';
+        lightThemeSwitch.classList.replace('on', 'off');
         darkThemeSwitch.classList.replace('off', 'on');
     }
 }
